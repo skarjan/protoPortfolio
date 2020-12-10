@@ -1,0 +1,17 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 06 Dec 2020 07:47:51 at http://aliensix.com/particles-1.4/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://aliensix.com/particles-1.4/ -O1 "C:\clones\particleClone" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+07:49:25	Error: 	"Not Found" (404) at link aliensix.com/particles-1.4/favicon.ico (from aliensix.com/particles-1.4/)
+07:52:23	Warning: 	Retry after error -4 (Incorrect length (232380 Bytes, 466950 expected)) at link aliensix.com/particles-1.4/HTML/images/team-member-2.jpg (from aliensix.com/particles-1.4/HTML/index-default-particles.html)
+07:52:24	Warning: 	Retry after error -4 (Incorrect length (233989 Bytes, 410969 expected)) at link aliensix.com/particles-1.4/HTML/images/team-member-3.jpg (from aliensix.com/particles-1.4/HTML/index-default-particles.html)
+07:52:44	Error: 	"Not Found" (404) at link aliensix.com/particles-1.4/HTML/index.html (from aliensix.com/particles-1.4/HTML/components.html)
+07:52:45	Warning: 	File not parsed, looks like binary: aliensix.com/particles-1.4/HTML/revolution/css/openhand.cur
+07:52:45	Warning: 	File not parsed, looks like binary: aliensix.com/particles-1.4/HTML/revolution/css/closedhand.cur
+
+HTTrack Website Copier/3.49-2 mirror complete in 4 minutes 54 seconds : 168 links scanned, 162 files written (8991726 bytes overall) [8129234 bytes received at 27650 bytes/sec], 1309748 bytes transferred using HTTP compression in 27 files, ratio 30%, 1.0 requests per connection
+(2 errors, 4 warnings, 0 messages)
