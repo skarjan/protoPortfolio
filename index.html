@@ -1085,13 +1085,13 @@
 					<p class="text-xs-small mb5"><strong class="text-switch">Fax:</strong> +1 112-444-2390</p> -->
 				<!-- </div> -->
 				<div class="co12 mt30-xs">
-					<form data-toggle="validator" id="contactForm" name="contactForm">
+					<form action="php\submit.php" method="post" data-toggle="validator" name="formulier">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
 										<input class="form-control" data-error="Deze invoer is verplicht."
-										id="msg_subject" placeholder="Onderwerp *" required="" type="text">
+										id="msg_subject" placeholder="Onderwerp *" required="" name="formSubject" type="text">
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1099,7 +1099,8 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
-										<input class="form-control" id="phone" placeholder="Telefoon" type="text">
+										<input class="form-control" data-error="Deze invoer is verplicht."
+										id="msg_subject" placeholder="Telefoon *" required="" name="formPhone" type="text">
 									</div>
 								</div>
 							</div><!-- /.column -->
@@ -1108,7 +1109,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
-										<input class="form-control" data-error="Deze invoer is verplicht." id="name" placeholder="Je naam *" required="" type="text">
+										<input class="form-control" data-error="Deze invoer is verplicht." name="formName" id="name" placeholder="Je naam *" required="" type="text">
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1116,7 +1117,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
-										<input class="email form-control" data-error="Deze invoer is verplicht." id="email" placeholder="Email *" required="" type="email">
+										<input class="email form-control" name="formEmail" data-error="Deze invoer is verplicht." id="email" placeholder="Email *" required="" type="text">
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1126,7 +1127,7 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<div class="controls">
-										<textarea class="form-control" data-error="Deze invoer is verplicht." id="message" placeholder="Bericht *" required="" rows="5"></textarea>
+										<textarea class="form-control" name="formMessage" data-error="Deze invoer is verplicht." id="message" placeholder="Bericht *" required="" rows="5"></textarea>
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1137,7 +1138,8 @@
 								<!-- <div id="msgSubmit" class="h4 hidden mt10 no-margin-bottom"></div> -->
 							</div><!-- /.column -->
 							<div class="col-sm-6 text-right">
-								<button type="submit" id="submit" class="btn btn-default btn-lg">Verstuur</button>
+								<input type="submit" class="btn btn-default btn-lg">
+
 							</div><!-- /.column -->
 						</div><!-- /.row -->
 					</form><!-- /.form -->
@@ -1147,14 +1149,13 @@
 	</section><!-- /.section -->
 	<!-- End Contact -->
 
-
 	<!-- Begin Footer -->
 	<footer class="footer-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 text-center">
-					<span class="">LOGOMOETHIER</span>
-					<h2 class="theme-title">Violent RED<span class="theme-title-smaller"> Template</span></h2>
+					<span class="">Arjan van der Veen</span>
+					<h2 class="theme-title">Front-end<span class="theme-title-smaller"> Developer</span></h2>
 					<a href="#"><span class="ion-social-twitter social-icons-dark-hover mr15"></span></a>
 	                <a href="#"><span class="ion-social-facebook social-icons-dark-hover mr15"></span></a>
 	                <a href="#"><span class="ion-social-googleplus-outline social-icons-dark-hover"></span></a>
