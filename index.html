@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="nl">
 
 <head>
 	<meta charset="utf-8"/>
 	<meta name="author" content="" />
 	<meta name="description" content="Particles - Personal + Agency Template">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,"> -->
 	<title>V0.9.5 Violent Red - Portfolio en meer</title>
 
 	<!-- Royal Preloader CSS -->
@@ -14,14 +13,14 @@
 
 	<!-- jQuery Files -->
 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 
 	<!-- Parallax File -->
-	<script type="text/javascript" src="js/parallax.min.js"></script>
+	<script src="js/parallax.min.js"></script>
 
 	<!-- Royal Preloader -->
-	<script type="text/javascript" src="js/royal_preloader.min.js"></script>
-	<script type="text/javascript">
+	<script src="js/royal_preloader.min.js"></script>
+	<script >
 		Royal_Preloader.config({
 		    mode:           'number',
 		    showProgress:   false,
@@ -70,7 +69,8 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand scroll-link" href="#home" data-id="home">AVIT</span></a>
+
+						<a class="navbar-brand scroll-link p-4" href="#home" data-id="home">avdveen.nl</a>
 
 					</div>
 
@@ -206,6 +206,7 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.div -->
+
 		<!-- End Our Process -->
 
 		<!-- Begin Quote Carousel -->
@@ -248,7 +249,7 @@
 		</div> -->
 		<!-- End Quote Carousel -->
 
-	<!-- </section> -->
+	 </section>
 	<!-- End Intro -->
 
 	<!-- Begin Services -->
@@ -568,7 +569,7 @@
 			</div><!-- /.row -->
 			<div class="row">
 				<div class="col-sm-4">
-					<img alt="" src="images\arielekst.jpg" class="img-responsive">
+					<img alt="" src="images/arielekst.jpg" class="img-responsive">
 					<div class="profile-box">
 						<ul class="list-unstyled">
 							<li><strong>Naam:</strong> Arjan van der Veen</li>
@@ -679,7 +680,7 @@
 			    	<span class="portfolio-badge badge">Basis design</span>
 			    	<span class="portfolio-hover">
 						<span>
-							<a href="https://dribbble.com/" target="_blank">
+							<a href="#" target="_blank">
 								<span class="portfolio-links"><span class="ion-ios-arrow-right portfolio-links-icons"></span></span>
 							</a>
 							<a href="images/work/3.jpg" class="zoom" title="Paper Mockup">
@@ -793,6 +794,7 @@
 			    </div><!-- /.column -->
 			</div><!-- /.row -->
 		</div><!-- /.container -->
+	</div>
 	</section><!-- /.section -->
 	<!-- Begin Work -->
 
@@ -1083,13 +1085,13 @@
 					<p class="text-xs-small mb5"><strong class="text-switch">Fax:</strong> +1 112-444-2390</p> -->
 				<!-- </div> -->
 				<div class="co12 mt30-xs">
-					<form data-toggle="validator" id="contactForm" name="contactForm">
+					<form action="php\submit.php" method="post" data-toggle="validator" name="formulier">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
 										<input class="form-control" data-error="Deze invoer is verplicht."
-										id="msg_subject" placeholder="Onderwerp *" required="" type="text">
+										id="msg_subject" placeholder="Onderwerp *" required="" name="formSubject" type="text">
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1097,7 +1099,8 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
-										<input class="form-control" id="phone" placeholder="Telefoon" type="text">
+										<input class="form-control" data-error="Deze invoer is verplicht."
+										id="msg_subject" placeholder="Telefoon *" required="" name="formPhone" type="text">
 									</div>
 								</div>
 							</div><!-- /.column -->
@@ -1106,7 +1109,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
-										<input class="form-control" data-error="Deze invoer is verplicht." id="name" placeholder="Je naam *" required="" type="text">
+										<input class="form-control" data-error="Deze invoer is verplicht." name="formName" id="name" placeholder="Je naam *" required="" type="text">
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1114,7 +1117,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="controls">
-										<input class="email form-control" data-error="Deze invoer is verplicht." id="email" placeholder="Email *" required="" type="email">
+										<input class="email form-control" name="formEmail" data-error="Deze invoer is verplicht." id="email" placeholder="Email *" required="" type="text">
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1124,7 +1127,7 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<div class="controls">
-										<textarea class="form-control" data-error="Deze invoer is verplicht." id="message" placeholder="Bericht *" required="" rows="5"></textarea>
+										<textarea class="form-control" name="formMessage" data-error="Deze invoer is verplicht." id="message" placeholder="Bericht *" required="" rows="5"></textarea>
 										<div class="help-block with-errors"></div>
 									</div>
 								</div>
@@ -1135,7 +1138,8 @@
 								<!-- <div id="msgSubmit" class="h4 hidden mt10 no-margin-bottom"></div> -->
 							</div><!-- /.column -->
 							<div class="col-sm-6 text-right">
-								<button type="submit" id="submit" class="btn btn-default btn-lg">Verstuur</button>
+								<input type="submit" class="btn btn-default btn-lg">
+
 							</div><!-- /.column -->
 						</div><!-- /.row -->
 					</form><!-- /.form -->
@@ -1145,14 +1149,13 @@
 	</section><!-- /.section -->
 	<!-- End Contact -->
 
-
 	<!-- Begin Footer -->
 	<footer class="footer-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 text-center">
-					<span class="">LOGOMOETHIER</span>
-					<h2 class="theme-title">Violent RED<span class="theme-title-smaller"> Template</span></h2>
+					<span class="">Arjan van der Veen</span>
+					<h2 class="theme-title">Front-end<span class="theme-title-smaller"> Developer</span></h2>
 					<a href="#"><span class="ion-social-twitter social-icons-dark-hover mr15"></span></a>
 	                <a href="#"><span class="ion-social-facebook social-icons-dark-hover mr15"></span></a>
 	                <a href="#"><span class="ion-social-googleplus-outline social-icons-dark-hover"></span></a>
@@ -1170,16 +1173,16 @@
 	<!-- Begin Footer -->
 
 	<!-- Javascript Files -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
 
-	<script type="text/javascript" src="js/particles.min.js"></script>
-	<script type="text/javascript" src="js/particlesRun.js"></script>
-	<script type="text/javascript" src="js/jquery.mixitup.js"></script>
-	<script type="text/javascript" src="js/form-validator.min.js"></script>
-	<script type="text/javascript" src="js/jquery.inview.min.js"></script>
-	<script type="text/javascript" src="js/jquery.countTo.js"></script>
-	<script type="text/javascript">
+	<script src="js/particles.min.js"></script>
+	<script src="js/particlesRun.js"></script>
+	<script src="js/jquery.mixitup.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/jquery.inview.min.js"></script>
+	<script src="js/jquery.countTo.js"></script>
+	<script >
 		/* ---- Counter (our count) ---- */
 		$('#ourcount').one('inview', function(event, isInView) {
 			if (isInView) {
@@ -1187,10 +1190,10 @@
 			}
 		});
 	</script>
-	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-	<script type="text/javascript" src="js/scrollreveal.min.js"></script>
-	<script type="text/javascript" src="js/style-switcher.js"></script><!-- Remove for production -->
-	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/scrollreveal.min.js"></script>
+	<script src="js/style-switcher.js"></script><!-- Remove for production -->
+	<script src="js/main.js"></script>
 </body>
 
 
