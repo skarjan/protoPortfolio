@@ -1,7 +1,7 @@
 // Message for users
 console.log("Welcome to the Elgarbo beta. Feel free to edit as you wish.")
 // for development use remove before PROD
-let testArray = ['a','f','d','z','h'];
+// let testArray = ['a','f','d','z','h'];
 //  Copy button
 function copyToClipboard(elementId) {
   // Create an auxiliary hidden input
@@ -18,8 +18,72 @@ function copyToClipboard(elementId) {
   document.body.removeChild(aux);
 } // End of function
 
+let copyEl = document.getElementById('copyButton');
+
+// even listeners and functions for the copy button
+copyEl.addEventListener('click', showToolTip);
+copyEl.addEventListener('mouseleave', hideToolTip);
 
 
+
+let lockImg = document.getElementById("lock");
+let sliderDiv = document.getElementById("myRange");
+
+sliderDiv.addEventListener('click', checkSliderValue);
+
+lockImg.addEventListener('animationend', removeAnimation);
+
+function removeAnimation() {
+    lockImg.classList.remove("animate__animated", "animate__wobble");
+    console.log("removeAnimation wordt gevuurd")
+}
+
+function addAnimation () {
+  lockImg.classList.add("animate__animated", "animate__wobble");
+}
+//  Wall of code that adds a lock with color related to its security
+function checkSliderValue() {
+  let sliderValue = document.getElementById("myRange").value;
+
+if (sliderValue > 7 && sliderValue < 10) {
+    console.log(sliderValue + " is meer dan 7 en minder dan 10");
+    lockImg.setAttribute("src", "img/lock.png");
+    lockImg.classList.add("animate__animated", "animate__wobble");
+
+  } else if (sliderValue > 9 && sliderValue < 12) {
+    lockImg.setAttribute("src", "img/lock-green.png");
+    lockImg.classList.add("animate__animated", "animate__wobble");
+    console.log(sliderValue + " is meer dan 9")
+  } else if (sliderValue > 11 && sliderValue < 14) {
+    lockImg.setAttribute("src", "img/lock-blue.png");
+    lockImg.classList.add("animate__animated", "animate__wobble");
+    console.log(sliderValue + " is meer dan 11")
+  } else if (sliderValue > 13 && sliderValue < 16) {
+    lockImg.setAttribute("src", "img/lock-purple.png");
+    lockImg.classList.add("animate__animated", "animate__wobble");
+    console.log(sliderValue + " is meer dan 13")
+  } else if (sliderValue > 15) {
+    lockImg.setAttribute("src", "img/legendarylock.png");
+    lockImg.classList.add("animate__animated", "animate__wobble");
+    console.log(sliderValue + " is meer dan 15")
+  }
+
+  else {
+    console.log(sliderValue + " is minder dan 7");
+
+  }
+}
+
+
+// tooltip to show on copy
+function showToolTip() {
+  $('[data-toggle=tooltip]').tooltip('show');
+}
+
+// hide tooltip
+function hideToolTip() {
+  $('[data-toggle=tooltip]').tooltip('dispose');
+}
 
 // Slider functionality
 var slider = document.getElementById("myRange");
@@ -32,6 +96,7 @@ slider.oninput = function() {
 }
 
 
+
 // toon woord in html
 function displayWord (e) {
   let element  = document.getElementById("js-wordElement");
@@ -39,86 +104,18 @@ function displayWord (e) {
   var result = arrString.replace(/,/g, "");
     element.innerHTML = result;
 }
+// New random string
+function generateString() {
+   var length = document.getElementById("myRange").value;
+   var result           = '';``
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
 
-// Random genration of letters, numbers and symbols
-// Lower care generator
-function lowerCaseLetterGenerator () {
-  const abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  let floatIndexOfLetter = Math.random()*26;
-  let intIndexOfLetter = Math.trunc(floatIndexOfLetter);
-  let randomLowerChar = abc[intIndexOfLetter];
-  console.log(randomLowerChar);
-  return randomLowerChar;
+      displayWord(result);
+   }
+   addAnimation();
+   return result;
 }
-// Number numberGenerator
-function numberGenerator() {
-  const allNums = [0,1,2,3,4,5,6,7,8,9]
-  let floatIndexOfLetter = Math.random()*10;
-  let intIndexOfLetter = Math.trunc(floatIndexOfLetter);
-  let randomNumber = allNums[intIndexOfLetter];
-  console.log(randomNumber);
-  return randomNumber;
-}
-
-// Loop letters into a lower case word variable
-function loopLowerChars(count) {
-var count = document.getElementById("demo").innerHTML;
-var word = [];
-    for (var i = 0; i < count; i++) {
-      word[i]= lowerCaseLetterGenerator();
-      console.log(word);
-      displayWord(word);
-    }
-}
-function loopUpperChars(count) {
-  var count = document.getElementById("demo").innerHTML;
-  var word = [];
-      for (var i = 0; i < count; i++) {
-        word[i]= upperCaseLetterGenerator();
-        console.log(word);
-        displayWord(word);
-      }
-  }
-  function LoopBothLowAndUpperChar () {
-    let upperAndLower = [];
-    var count = document.getElementById("demo").innerHTML;
-  for (var i = 0; i < count; i++) {
-    if (determineUpperOrLower() <= 0.50) {
-      upperAndLower[i] = lowerCaseLetterGenerator();
-    } else {
-      upperAndLower[i] = upperCaseLetterGenerator();
-    } displayWord(upperAndLower);
-    }
-  } // einde functie
-  function LoopBothLowAndUpperAndNumbers () {
-    let upperAndLowerAndNumbers = [];
-    var count = document.getElementById("demo").innerHTML;
-  for (var i = 0; i < count; i++) {
-    if (determineUpperOrLower() <= 0.34) {
-      upperAndLowerAndNumbers[i] = lowerCaseLetterGenerator();
-    } else if (determineUpperOrLower() <= 0.67) {
-      upperAndLowerAndNumbers[i] = upperCaseLetterGenerator();
-    } else {
-      upperAndLowerAndNumbers[i] = numberGenerator();
-    }
-    displayWord(upperAndLowerAndNumbers);
-    }
-  } // einde functie
-
-
-
-
-// Random uppercase character
-function upperCaseLetterGenerator () {
-    const ABC =  ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    let floatIndexOfLetter = Math.random()*26;
-    let intIndexOfLetter = Math.trunc(floatIndexOfLetter);
-    let randomUpperChar = ABC[intIndexOfLetter];
-    console.log(randomUpperChar);
-    return randomUpperChar;
-  }
-  // upper and lower character lowerCaseLetter
-function determineUpperOrLower () {
-  let upperOrLower = Math.random();
-    return upperOrLower;
-}
+  
