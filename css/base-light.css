@@ -30,6 +30,10 @@
 
 /* =Common Styles
 -------------------------------------------------------------- */
+.home-header {
+  color: white;
+}
+
 .logo {
     color: #424242;
 }
@@ -172,7 +176,7 @@ body {
     border: 1px solid #cecece;
 }
 
-.tab-pane::first-letter { 
+.tab-pane::first-letter {
     color: #414141;
 }
 

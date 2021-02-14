@@ -42,6 +42,10 @@ Author:Denis Samardjiev
 
 /* =Common Styles
 -------------------------------------------------------------- */
+.home-header {
+  color: white!important;
+}
+
 body {
 	background-color: #1d1d1d;
 	font-family: 'Roboto', sans-serif;
@@ -56,6 +60,7 @@ body {
 html {
 	height: 100%;
 }
+
 
 a:active, a:focus {
    outline: none;
