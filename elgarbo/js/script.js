@@ -1,6 +1,10 @@
 // Message for users
 console.log("Welcome to the Elgarbo beta. Feel free to edit as you wish.")
 // for development use remove before PROD
+// DEBUG:
+function trace(message) { let traceOn = true; if (traceOn) {return console.log(message);} }
+
+
 // let testArray = ['a','f','d','z','h'];
 //  Copy button
 function copyToClipboard(elementId) {
@@ -23,7 +27,6 @@ let copyEl = document.getElementById('copyButton');
 // even listeners and functions for the copy button
 copyEl.addEventListener('click', showToolTip);
 copyEl.addEventListener('mouseleave', hideToolTip);
-
 
 
 let lockImg = document.getElementById("lock");
@@ -118,4 +121,39 @@ function generateString() {
    addAnimation();
    return result;
 }
-  
+
+
+// joke API
+var jsonResponse = {};
+var jokeDescription = "";
+var jokeQuestion = "";
+var jokeAnswer = "";
+
+function get_joke_of_the_day() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+	 if (this.readyState == 4 && this.status == 200) {
+	     // Access the result here
+var joke = xhttp.responseText;
+jsonResponse = JSON.parse(joke);
+jokeDescription = jsonResponse.contents.jokes[0].description;
+jokeQuestion = jsonResponse.contents.jokes[0].joke.title;
+jokeAnswer = jsonResponse.contents.jokes[0].joke.text;
+jokeQuestion = jokeQuestion.substr(3);
+jokeAnswer = jokeAnswer.substr(3);
+let jokeQuestionContainer = document.getElementById('jokeQuestion');
+let jokeAnswerContainer = document.getElementById('jokeAnswer');
+
+jokeQuestionContainer.innerHTML = jokeQuestion;
+jokeAnswerContainer.innerHTML = jokeAnswer;
+console.log(jsonResponse["joke"]);
+trace(jsonResponse);
+	 }
+    };
+    xhttp.open("GET", "https://api.jokes.one/jod?category=animal", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.setRequestHeader("X-JokesOne-Api-Secret", "YOUR API HERE");
+    xhttp.send();
+}
+
+get_joke_of_the_day();

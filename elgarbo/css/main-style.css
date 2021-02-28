@@ -152,3 +152,12 @@
 .navbar-img {
   height:30px;
 }
+.card {
+  margin-left:auto;
+  margin-right: auto;
+  width: 20rem;
+}
+
+.joke-section {
+padding-top: 5rem;
+}
