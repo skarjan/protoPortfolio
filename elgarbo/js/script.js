@@ -139,8 +139,8 @@ jsonResponse = JSON.parse(joke);
 jokeDescription = jsonResponse.contents.jokes[0].description;
 jokeQuestion = jsonResponse.contents.jokes[0].joke.title;
 jokeAnswer = jsonResponse.contents.jokes[0].joke.text;
-jokeQuestion = jokeQuestion.substr(3);
-jokeAnswer = jokeAnswer.substr(3);
+// jokeQuestion = jokeQuestion.substr(3);
+// jokeAnswer = jokeAnswer.substr(3);
 let jokeQuestionContainer = document.getElementById('jokeQuestion');
 let jokeAnswerContainer = document.getElementById('jokeAnswer');
 
